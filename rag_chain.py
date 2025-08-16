@@ -1,11 +1,14 @@
 import os
 from dotenv import load_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
+
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+
+
 
 load_dotenv()
 
@@ -41,12 +44,13 @@ prompt = PromptTemplate.from_template(prompt_template)
 # LLM setup
 # -------------------------
 llm = ChatOpenAI(
-    api_key=os.getenv("OPENROUTER_API_KEY"),
+    openai_api_key=os.getenv("OPENROUTER_API_KEY"),
     model="deepseek/deepseek-r1:free",
     max_tokens=350,
     temperature=0.7,
     base_url="https://openrouter.ai/api/v1"
 )
+
 
 # -------------------------
 # Format documents
