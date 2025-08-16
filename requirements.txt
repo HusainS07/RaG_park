@@ -3,6 +3,6 @@ uvicorn[standard]
 python-dotenv
 langchain
 langchain-huggingface
-langchain-communities
+langchain-community
 chromadb
 openai
