@@ -6,3 +6,4 @@ langchain-huggingface
 langchain-community
 chromadb
 langchain-chroma
+langchain-openai>=0.0.27
